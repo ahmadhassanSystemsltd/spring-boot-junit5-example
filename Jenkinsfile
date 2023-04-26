@@ -46,10 +46,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     sh '''
-                        mvn clean install -DskipTests sonar:sonar \
-                        -Dsonar.projectKey=demo \
-                        -Dsonar.host.url=http://20.102.67.142:9000 \
-                        -Dsonar.login=sqp_96389932750f69c14550ef4a5e2448cd19c4d93c
+                        mvn clean install -DskipTests sonar:sonar -Dsonar.projectKey=demo -Dsonar.host.url=http://20.102.67.142:9000 -Dsonar.login=sqp_96389932750f69c14550ef4a5e2448cd19c4d93c
                     '''
                  }
              }
